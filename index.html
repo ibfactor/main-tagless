@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home @ IBFactor</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+			*:not(h1 *, h2 *, h3 *, h4 *, h5 *, h6 *) {
+				font-family: "Montserrat", sans-serif;
+			}
+			h1, h2, h3, h4, h5, h6, h6 {
+				font-family: "Libre Baskerville", serif;
+				font-weight: 700;
+			}
+
+			body {
+				background-color: #1a1a1a;
+				color: rgba(255, 255, 255, 0.8);
+				padding-bottom: 100px;
+			}
+
+			#logo {
+				display: inline-block;
+				user-select: none;
+				cursor: pointer;
+			}
+			#logo > h1 {
+				font-weight: 700;
+				display: inline-block;
+				vertical-align: middle;
+				color: #d0d2ca;
+			}
+			#logo > img {
+				width: 50px;
+				vertical-align: middle;
+				margin-top: -10px;
+				transition: 1s all;
+			}
+			#logo:hover > img {
+				transform: rotate(360deg);
+			}
+
+			nav {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: rgba(255, 255, 255, 0);
+				padding-left: 15px;
+				padding-right: 15px;
+				padding-top: 3px;
+				backdrop-filter: blur(3px);
+			}
+
+			main {
+				margin-top: 85px;
+				padding: 30px;
+			}
+
+			a {
+				color: rgba(0, 0, 0, 0.8);
+				text-decoration: none;
+				position: relative;
+				border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+				transition: all 0.2s;
+				padding-top: 2px;
+				padding-left: 1px;
+				padding-right: 1px;
+			}
+			body a {
+				color: rgba(255, 255, 255, 0.8);
+			}
+			a::after {
+				content: "";
+				position: absolute;
+				top: auto;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 0%;
+				background-color: rgba(255, 255, 255, 0.8);
+				transition: all 0.2s;
+			}
+			a:hover::after {
+				height: 100%;
+				z-index: -1;
+			}
+			a:hover {
+				color: rgba(0, 0, 0, 0.8) !important;
+			}
+
+			#projects div {
+				background-color: rgba(255, 255, 255, 0);
+				cursor: pointer;
+				padding: 30px;
+				display: inline-block;
+				border-radius: 5px;
+				border: 1px solid rgba(50, 50, 50, 0.5);
+				width: calc(33.333% - 65px);
+				transition: 0.25s all;
+				font-weight: 800;
+			}
+			#projects div:hover {
+				background-color: rgba(255, 255, 255, 0.01);
+			}
+			#projects > div > span {
+				display: block;
+				margin-top: 10px;
+				text-align: left;
+				position: relative;
+				font-weight: 400;
+			}
+			#projects div > span > a:nth-of-type(1) {
+				margin-right: 5px;
+			}
+
+
+
+			p.center {
+				text-align: center;
+			}
+
+			#profile_card {
+				border: 1px solid rgba(50, 50, 50, 0.5);
+				border-radius: 5px;
+				padding: 30px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
+
+			u {
+				text-decoration: none;
+				border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+			}
+
+			#blog {
+				overflow-y: scroll;
+				white-space: nowrap;
+			}
+			#blog > div {
+				background-color: rgba(255, 255, 255, 0);
+				border: 1px solid rgba(50, 50, 50, 0.5);
+				width: calc(33.333% - 65px);
+				white-space: normal;
+				hyphens: auto;
+				-webkit-hyphens: auto;
+				cursor: pointer;
+				padding: 30px;
+			}
+			#blog > div:hover {
+				background-color: rgba(255, 255, 255, 0.01);
+			}
+			#blog > div > p {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 4;
+				line-clamp: 4;
+				overflow-y: hidden;
+				text-overflow: ellipsis;
+			}
+			#blog > div > h4 {
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				line-clamp: 2;
+				overflow-y: hidden;
+				text-overflow: ellipsis;
+			}
+
+			@media screen and (max-width: 715px) {
+				#projects > div {
+					width: calc(50% - 65px);
+					margin-bottom: 5px;
+				}
+
+				#blog > div {
+					width: calc(50% - 65px);
+				}
+			}
+
+			@media screen and (max-width: 505px) {
+				#projects > div {
+					width: calc(100% - 65px);
+					margin-bottom: 5px;
+				}
+
+				#blog > div {
+					width: calc(100% - 65px);
+				}
+			}
+
+
+			#notice {
+				background-color: rgba(220, 20, 60, 0.5);
+				backdrop-filter: blur(3px);
+				padding: 20px;
+				line-height: 0.5;
+				border-radius: 5px;
+				width: 80%;
+				position: fixed;
+				left: 50%;
+				transform: translateX(-50%);
+				bottom: 20px;
+			}
+		</style>
+
+	</head>
+	<body>
+		<script src="https://louisabraham.github.io/nekojs/neko.js" data-autostart></script>
+		<script src="/render.js"></script>
+	</body>
+</html>
